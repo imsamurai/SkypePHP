@@ -117,6 +117,8 @@ class skype {
 		curl_setopt($curl, CURLOPT_HEADER, $showHeaders);
 		curl_setopt($curl, CURLOPT_FOLLOWLOCATION, $suivre);
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($curl, CURLOPT_COOKIEJAR, $this->cacheDir.'/cookie.txt');
+                curl_setopt($curl, CURLOPT_COOKIEFILE, $this->cacheDir.'/cookie.txt');
 		$resultat = curl_exec($curl);
 		
 		curl_close($curl);
